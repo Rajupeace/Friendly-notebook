@@ -6,3 +6,15 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  # Proxy API calls to the backend deployed on Vercel
+  from = "/api/*"
+  to = "https://friendly-h08iafs51-rajubhaibhai576-gmailcoms-projects.vercel.app/api/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
