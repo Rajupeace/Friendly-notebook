@@ -1,0 +1,72 @@
+.messaging-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.messaging-form-card, .sent-messages-card {
+  background: rgba(7,10,24,0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(96,165,250,0.06);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.messaging-form-card h3, .sent-messages-card h3 {
+  color: var(--accent);
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+.btn-send {
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  color: var(--text);
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59,130,246,0.08);
+}
+
+.sent-messages-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.message-item {
+  background: rgba(7,10,24,0.45);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.message-text {
+  margin: 0 0 1rem 0;
+  color: var(--muted-text);
+  line-height: 1.6;
+}
+
+.message-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--accent-600);
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .messaging-container {
+    grid-template-columns: 1fr;
+  }
+}

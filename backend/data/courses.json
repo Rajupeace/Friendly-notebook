@@ -1,0 +1,16 @@
+[
+  {
+    "id": "82eb1ee8-65d3-490a-8114-a16f92dd5544",
+    "name": "introduction project",
+    "code": "IDP230",
+    "year": "3",
+    "semester": "1",
+    "branch": "CSE",
+    "sections": [
+      "5",
+      "10"
+    ],
+    "description": "project course",
+    "createdAt": "2025-11-02T19:37:54.838Z"
+  }
+]

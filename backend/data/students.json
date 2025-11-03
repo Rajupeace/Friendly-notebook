@@ -1,0 +1,20 @@
+[
+  {
+    "studentName": "mary.satvika",
+    "sid": "231fa04434",
+    "email": "satvika2812@gmail.com",
+    "year": "3",
+    "section": "10",
+    "branch": "CSE",
+    "password": "reddy@"
+  },
+  {
+    "studentName": "BobbyMartin",
+    "sid": "231fa04470",
+    "email": "bobbymartin1228@gmail.com",
+    "year": "3",
+    "section": "5",
+    "branch": "cse",
+    "password": "bobbymartin@"
+  }
+]

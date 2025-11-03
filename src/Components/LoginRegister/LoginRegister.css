@@ -1,0 +1,128 @@
+/* Login / Register page base */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.login-register-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.bg-video { display: none; }
+.login-register-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(4,8,16,0.45), rgba(6,12,26,0.55));
+  z-index: 1;
+}
+
+.form-container {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(7,10,24,0.9), rgba(6,10,20,0.8));
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  border-radius: 14px;
+  padding: 34px 28px;
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid var(--glass-border);
+  animation: fadeInForm 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: box-shadow .18s, transform .12s;
+}
+
+@keyframes fadeInForm {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Selection container */
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 6px 4px;
+}
+
+.selection-container h2 {
+  color: var(--primary-600);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.6px;
+}
+
+.selection-container p { color: var(--muted-text); margin-bottom: 18px; }
+
+.selection-buttons { display:flex; flex-direction:column; gap:14px; width:100%; align-items:center; }
+.selection-buttons .button-row { display:flex; justify-content:center; width:100%; }
+
+.selection-buttons button,
+.selection-buttons .button-row button {
+  width: 84%; max-width:360px; margin:0 auto; display:block;
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.06);
+  color: var(--text); padding:12px 16px; border-radius:10px;
+  font-size:1rem; font-weight:700; cursor:pointer; transition: transform .14s, box-shadow .14s, background .14s;
+}
+
+.selection-buttons button:hover { transform: translateY(-3px); box-shadow:0 8px 26px rgba(2,6,23,0.6); background: linear-gradient(90deg, rgba(59,130,246,0.06), rgba(6,182,212,0.04)); }
+
+.selection-buttons .admin-btn { border-color: rgba(96,165,250,0.08); background: linear-gradient(90deg, rgba(11,99,183,0.06), rgba(6,182,212,0.03)); color: var(--text); }
+
+/* Form controls */
+input, select, textarea {
+  background: rgba(2,6,23,0.45);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.98rem;
+  outline: none;
+  transition: box-shadow .12s, border-color .12s, transform .08s;
+}
+
+input::placeholder, textarea::placeholder { color: rgba(220,230,246,0.28); }
+
+input:focus, select:focus, textarea:focus { border-color: var(--primary-600); box-shadow: 0 8px 30px rgba(59,130,246,0.06); }
+
+button[type="submit"] {
+  width: 100%; background: linear-gradient(90deg, var(--primary-600) 0%, var(--accent) 100%);
+  color: white; border: none; border-radius: 8px; padding: 12px 14px; font-size:1.02rem; font-weight:700; cursor:pointer;
+  transition: transform .16s ease, box-shadow .18s ease;
+}
+
+button[type="submit"]:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(59,130,246,0.12); }
+
+.back-link { color: var(--muted-text); text-align:center; cursor:pointer; font-size:.95rem; margin-top:8px; display:inline-block; }
+.back-link:hover { color: var(--primary-600); text-decoration:underline; }
+
+.assignment-group { background: rgba(255,255,255,0.02); border-radius:12px; padding: 12px; margin-bottom:12px; border:1px solid rgba(96,165,250,0.04); }
+
+.btn-add, .btn-remove { padding: .6rem .8rem; border-radius:8px; border:none; cursor:pointer; font-weight:600; transition: all .2s ease; }
+.btn-add { background: transparent; color: var(--primary-600); border: 1.6px solid var(--primary-600); }
+.btn-add:hover { background: var(--primary-600); color: #fff; }
+.btn-remove { background: transparent; color: #bbb; border: 1.6px solid rgba(255,255,255,0.06); }
+
+.multi-select-container { display:flex; flex-direction:column; gap:.5rem; }
+.multi-select-container label { color: var(--accent); font-size:1rem; font-weight:600; }
+select[multiple] { min-height: 100px; padding: 10px; }
+
+/* responsive */
+@media (max-width: 500px) {
+  .form-container { padding: 22px 16px; max-width: 95vw; }
+  .selection-buttons button, .selection-buttons .button-row button { width:98%; font-size:1rem; padding:12px; }
+  .selection-container h2 { font-size: 1.8rem; }
+}

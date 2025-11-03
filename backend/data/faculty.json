@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Faculty Reddy",
+    "facultyId": "ReddyFBN@1228",
+    "email": "reddy@friendlycollege.edu",
+    "password": "ReddyFBN",
+    "assignments": [
+      {
+        "subject": "Computer Science",
+        "year": "2",
+        "sections": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "subject": "Data Structures",
+        "year": "3",
+        "sections": [
+          "A"
+        ]
+      }
+    ],
+    "facultyToken": "9c94e2f1-3e84-4ff1-963c-09c7b536843b",
+    "tokenIssuedAt": "2025-11-02T17:09:45.572Z"
+  }
+]

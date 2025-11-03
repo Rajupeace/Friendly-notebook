@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# Friendly College Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack college management system with Admin, Faculty, and Student dashboards.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+### Prerequisites
+- Node.js (v16 or higher)
+- npm
 
-### `npm start`
+### Running Both Servers
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Option 1: npm Command (Recommended)
+```bash
+npm run dev
+```
+This will start both backend and frontend servers simultaneously.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Option 2: Manual Commands
+```bash
+# Terminal 1 - Backend
+cd backend && npm start
 
-### `npm test`
+# Terminal 2 - Frontend
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Option 3: Batch File (Windows)
+```bash
+start-fullstack.bat
+```
 
-### `npm run build`
+#### Option 4: PowerShell (Windows)
+```bash
+powershell -ExecutionPolicy Bypass -File start-fullstack.ps1
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌐 Access Points
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:5000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔑 Login Credentials
 
-### `npm run eject`
+### Admin Login
+- Username: `ReddyFBN@1228`
+- Password: `ReddyFBN`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Faculty Login
+- Username: `ReddyFBN@1228`
+- Password: `ReddyFBN`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛑 Stopping Servers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Press `Ctrl+C` in terminal
+- Close the command window
+- Use Task Manager to kill Node.js processes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📋 Features
 
-## Learn More
+- ✅ Admin Dashboard (Manage students, faculty, courses)
+- ✅ Faculty Dashboard (Upload materials with module/unit structure)
+- ✅ Student Dashboard (View organized materials)
+- ✅ Authentication & Authorization
+- ✅ File uploads (PDF, Video, Documents)
+- ✅ Module/Unit organization system
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 Development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend API Endpoints
+- `GET /api/health` - Health check
+- `POST /api/admin/login` - Admin authentication
+- `POST /api/faculty/login` - Faculty authentication
+- `POST /api/materials` - Upload materials
+- `GET /api/courses` - Get courses/subjects
 
-### Code Splitting
+### Frontend Structure
+- `/src/Components/AdminDashboard/` - Admin features
+- `/src/Components/FacultyDashboard/` - Faculty features
+- `/src/Components/StudentDashboard/` - Student features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🐛 Troubleshooting
 
-### Analyzing the Bundle Size
+### Port Already in Use
+```bash
+# Kill existing Node.js processes
+taskkill /f /im node.exe
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Backend Syntax Error
+If you see "Unexpected end of input", the backend file may be missing a closing brace. Run:
+```bash
+node -c backend/index.js
+```
 
-### Making a Progressive Web App
+### Login Issues
+1. Make sure both servers are running
+2. Check API endpoints are responding
+3. Verify login credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📁 Project Structure
 
-### Advanced Configuration
+```
+friendly/
+├── backend/           # Node.js API server
+│   ├── index.js      # Main server file
+│   └── data/         # JSON database files
+├── src/              # React frontend
+│   └── Components/   # React components
+├── start-fullstack.bat # Windows batch script
+├── start-fullstack.ps1 # PowerShell script
+└── package.json      # Dependencies and scripts
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 💾 Database
 
-### Deployment
+The application uses file-based JSON storage for:
+- **Admin accounts** (`admin.json`)
+- **Faculty accounts** (`faculty.json`)
+- **Student accounts** (`students.json`)
+- **Course/Subject data** (`courses.json`)
+- **Materials/Files** (`materials.json`)
+- **Messages/Announcements** (`messages.json`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 Deployment
 
-### `npm run build` fails to minify
+### Development
+```bash
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Production
+```bash
+npm run build
+```
+
+## 📚 API Documentation
+
+### Authentication
+- **Admin Login:** `POST /api/admin/login`
+- **Faculty Login:** `POST /api/faculty/login`
+- **Student Registration:** `POST /api/students`
+
+### Materials
+- **Upload:** `POST /api/materials`
+- **List:** `GET /api/materials`
+- **Delete:** `DELETE /api/materials/:id`
+
+### Management
+- **Courses:** `GET/POST/PUT/DELETE /api/courses`
+- **Faculty:** `GET/POST/PUT/DELETE /api/faculty`
+- **Students:** `GET/POST/PUT/DELETE /api/students`
